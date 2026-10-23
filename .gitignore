@@ -1,0 +1,25 @@
+# Rust / Cargo
+target/
+**/target/
+
+# Rust compiler diagnostics
+rustc-ice-*.txt
+
+# Rustfmt backups
+**/*.rs.bk
+
+# Debug symbols (Windows)
+*.pdb
+
+# Cargo Mutants
+**/mutants.out*/
+
+# macOS
+.DS_Store
+
+# Local environment files
+.env
+.env.*
+
+# IDE-specific local files
+.idea/
