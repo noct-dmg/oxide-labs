@@ -1,4 +1,4 @@
-use std::{env, net::IpAddr};
+use std::{env, net::IpAddr, process};
 
 fn main() {
     // Collect the CLI arguments into a Vec<String>
@@ -10,7 +10,7 @@ fn main() {
     if args.len() < 3 {
         println!("Error: Missing arguments!");
         println!("Usage: cargo run -- <ip_address> <port>");
-        std::process::exit(1)
+        process::exit(1)
     }
 
     // declare variables
