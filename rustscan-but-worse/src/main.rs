@@ -1,4 +1,9 @@
-use std::{env, net::IpAddr, process};
+use std::{
+    env,
+    net::{AddrParseError, IpAddr},
+    num::ParseIntError,
+    process,
+};
 
 fn main() {
     // Collect the CLI arguments into a Vec<String>
@@ -14,8 +19,21 @@ fn main() {
     }
 
     // declare variables
-    let target: IpAddr = args[1].parse().expect("Invalid IP Address");
-    let port: u16 = args[2].parse().expect("Invalid Port numder");
+    let target: IpAddr = match validate_target(&args[1]) {
+        Ok(value) => value,
+        Err(error) => {
+            eprintln!("Invalid IP address, {error}");
+            process::exit(1)
+        }
+    };
+    let port: u16 = match validate_port(&args[2]) {
+        Ok(value) => value,
+        Err(error) => {
+            eprintln!("Invalid port, {error}");
+            process::exit(1)
+        }
+    };
+
     let service = identify_service(port);
 
     // scanner(port, target);
@@ -23,9 +41,13 @@ fn main() {
 }
 
 // take target address and port and validate value
-//fn validate_target() -> {};
+fn validate_target(input: &str) -> Result<IpAddr, AddrParseError> {
+    input.parse()
+}
 
-//fn validate_port() {};
+fn validate_port(input: &str) -> Result<u16, ParseIntError> {
+    input.parse()
+}
 
 // matches port value to known services
 fn identify_service(port: u16) -> &'static str {
