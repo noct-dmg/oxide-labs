@@ -8,8 +8,6 @@ use std::{
 fn main() {
     // Collect the CLI arguments into a Vec<String>
     let args: Vec<String> = env::args().collect();
-    // Print the entire vector to see what's inside
-    // println!("All arguments: {:?}", args);
 
     // Confirm In-Line arguments are as many as needed.
     if args.len() < 3 {
@@ -44,7 +42,6 @@ fn main() {
 fn validate_target(input: &str) -> Result<IpAddr, AddrParseError> {
     input.parse()
 }
-
 fn validate_port(input: &str) -> Result<u16, ParseIntError> {
     input.parse()
 }
