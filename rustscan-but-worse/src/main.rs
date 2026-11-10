@@ -1,6 +1,6 @@
 use std::{
     env,
-    net::{AddrParseError, IpAddr},
+    net::{AddrParseError, IpAddr, TcpStream},
     num::ParseIntError,
     process,
 };
@@ -58,14 +58,15 @@ fn identify_service(port: u16) -> &'static str {
     }
 }
 
+// print scan info for user
 fn scan_info(target: IpAddr, port: u16, service: &str) {
-    println!("\nTarget: {target}");
-    println!("Port: {port}");
-    println!("Service: {service}\n");
+    println!("\nTarget: {}", target);
+    println!("Port: {}", port);
+    println!("Service: {}\n", service);
     println!("Initializing scan...\n")
 }
 
-/* Placeholder for TCP scanning implementation
-fn scanner(port: u16, target: Ipv4Addr) {
-    println!("Initializing scan on {target} at port {port}....");
-} */
+// Placeholder for TCP scanning implementation
+fn scanner(port: u16, target: IpAddr) {
+    todo!()
+}
