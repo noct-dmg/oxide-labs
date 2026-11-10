@@ -18,8 +18,9 @@ Rather than focusing on tutorials or isolated exercises, Oxide Labs emphasizes l
 
 | Project | Description | Status |
 |---|---|---|
-| [rustscan-but-worse](./rustscan-but-worse) | A TCP port scanner developed to explore networking and systems programming in Rust. | On Hold |
 | [calc-is-short-for-calculator](./calc-is-short-for-calculator) | A simple calculator programmed in Rust to further understanding. | In Development |
+| [rustscan-but-worse](./rustscan-but-worse) | A TCP port scanner developed to explore networking and systems programming in Rust. | On Hold |
+| [the-book](./the-book) | Repo to document journey through the Rust book to learng Rust more. | In Progress |
 
 Additional projects will be introduced as development progresses.
 
