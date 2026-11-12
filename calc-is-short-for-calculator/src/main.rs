@@ -4,11 +4,7 @@ use std::{io::stdin, num::ParseFloatError};
 fn main() {
     let mut counter = 0;
     let num1 = loop {
-        if counter == 0 {
-            println!("Please input a number");
-        } else {
-            println!("Please input a valid number. ");
-        }
+        validate_counter(counter);
 
         // init num1 as empty string for user input
         let mut num1 = String::new();
@@ -19,7 +15,6 @@ fn main() {
         let num1: f64 = match validate_num(num1) {
             Ok(num) => num,
             Err(_) => {
-                println!("HELLO WORLD");
                 counter += 1;
                 continue;
             }
@@ -30,11 +25,7 @@ fn main() {
 
     counter = 0; // reset counter to 0 for next loop
     let num2 = loop {
-        if counter == 0 {
-            println!("Please input next number");
-        } else {
-            println!("Please input a valid number");
-        }
+        validate_counter(counter);
 
         // init num2 as empty string for user input
         let mut num2 = String::new();
@@ -52,7 +43,7 @@ fn main() {
         break num2;
     };
 
-    println!("number 1 is {num1} and number 2 is {num2}.");
+    println!("number 1: {num1}\nnumber 2: {num2}");
 }
 
 // fn pick_operator(num1: f64, num2: f64) {
